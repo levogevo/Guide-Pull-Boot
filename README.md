@@ -21,11 +21,19 @@ If the prerequisites are met, download a userdebug GSI for your device. Choose a
 
 ![Alt Text](media/download-aosp-gsi.gif)
 
-If you downloaded on PC, then push the file to the device's download folder with `adb push gsi.zip /sdcard/Download/`. From here, you need to use the DSU Sideloader app to start the DSU activity.
+If you downloaded on PC, then push the file to the device's download folder with (download path may vary):
+```
+adb push gsi.zip /sdcard/Download/
+```
+From here, you need to use the DSU Sideloader app to start the DSU activity.
 
 ![Alt Text](media/dsu-app-intro.gif)
 
-You should then execute the command given by DSU Sideloader. In this case, `adb shell sh "/storage/emulated/0/Android/data/vegabobo.dsusideloader/files/install"`. The DSU activity will show up in the notification panel.
+You should then execute the command given by DSU Sideloader. In this case:
+```
+adb shell sh "/storage/emulated/0/Android/data/vegabobo.dsusideloader/files/install"
+```
+The DSU activity will show up in the notification panel.
 
 ![Alt Text](media/dsu-notif.png)
 
@@ -77,4 +85,4 @@ boot_b.img: 1 file pushed, 0 skipped. 169.0 MB/s (100663296 bytes in 0.568s)
 > adb shell file /sdcard/Download/boot_b.img
 /sdcard/Download/boot_b.img: Android boot image v2
 ```
-~End of guide~
+End of guide
