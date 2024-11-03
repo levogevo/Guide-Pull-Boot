@@ -21,9 +21,19 @@ If the prerequisites are met, download a userdebug GSI for your device. Choose a
 
 ![Alt Text](media/download-aosp-gsi.gif)
 
+---
+**NOTE:**
+When you read the following:
+```
+> command
+```
+The `>` is to indicate a command executed on the PC.
+
+---
+
 If you downloaded on PC, then push the file to the device's download folder with (download path may vary):
 ```
-adb push gsi.zip /sdcard/Download/
+> adb push gsi.zip /sdcard/Download/
 ```
 From here, you need to use the DSU Sideloader app to start the DSU activity.
 
@@ -31,7 +41,7 @@ From here, you need to use the DSU Sideloader app to start the DSU activity.
 
 You should then execute the command given by DSU Sideloader. In this case:
 ```
-adb shell sh "/storage/emulated/0/Android/data/vegabobo.dsusideloader/files/install"
+> adb shell sh "/storage/emulated/0/Android/data/vegabobo.dsusideloader/files/install"
 ```
 The DSU activity will show up in the notification panel.
 
@@ -41,6 +51,16 @@ The device will reboot and you should be greeted with the GSI you downloaded.
 
 ## Pull boot image
 To pull the boot image, we need to find the boot partition of the device. If the device is an [A/B device](https://source.android.com/docs/core/ota/ab), then there may be two boot partitions, in which case you should pull both.
+
+---
+**NOTE:**
+When you read the following:
+```
+generic_arm64:/ # command
+```
+The `generic_arm64:/ #` is to indicate a command executed on the Android device. All other lines can be regarded as command output.
+
+---
 
 Enable adb root and verify you are running as root:
 ```
